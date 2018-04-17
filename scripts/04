@@ -1,0 +1,14 @@
+if [ ! -e /etc/crontabsum ]; then
+cp /etc/crontab /etc/crontabsum
+fi
+
+CRONSUM=`md5sum /etc/crontab | awk '{ print $1 }'`
+NEWSUM=`md5sum /etc/crontabsum | awk '{ print $1 }'`
+
+if [ "$CRONSUM" != "$NEWSUM" ]; then
+echo "File has been modified" | mail -s "MODIFIED" root
+else
+echo "File has not been modified"
+fi
+
+echo "0 0 * * * root sh ~/04 2>&1" | crontab

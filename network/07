@@ -1,0 +1,1 @@
+nslookup -query=ns slash16.org

@@ -1,0 +1,4 @@
+dpm-master.42.us.org
+
+#dig -x 10.51.1.81
+#nslookup 10.51.1.81

@@ -1,0 +1,6 @@
+aws (amazon web service)
+
+#nslookup -type=ns slash16.org
+#host -t NS slash16.org
+#nslookup slash16.org
+#whois
